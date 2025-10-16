@@ -24,10 +24,10 @@ export default function ForgotPasswordPage() {
       if (error) {
         setError(error.message)
       } else {
-        setMessage('Email de recuperação enviado! Verifique sua caixa de entrada.')
+        setMessage('Password reset email sent! Check your inbox.')
       }
     } catch (err) {
-      setError('Ocorreu um erro inesperado. Tente novamente.')
+      setError('An unexpected error occurred. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -39,10 +39,10 @@ export default function ForgotPasswordPage() {
       <div className="flex-1 bg-gray-50 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
           <h1 className="text-3xl font-bold text-black mb-4 text-center">
-            Recuperar senha
+            Reset password
           </h1>
           <p className="text-gray-600 mb-8 text-center">
-            Digite seu email e enviaremos um link para redefinir sua senha
+            Enter your email and we'll send you a link to reset your password
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -68,7 +68,7 @@ export default function ForgotPasswordPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="seu@email.com"
+                placeholder="your@email.com"
                 className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
                 required
               />
@@ -83,11 +83,11 @@ export default function ForgotPasswordPage() {
               {loading ? (
                 <div className="flex items-center">
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                  Enviando...
+                  Sending...
                 </div>
               ) : (
                 <>
-                  Enviar link de recuperação
+                  Send reset link
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -102,7 +102,7 @@ export default function ForgotPasswordPage() {
               href="/login"
               className="text-sm text-gray-600 hover:text-black transition-colors"
             >
-              ← Voltar para o login
+              ← Back to login
             </Link>
           </div>
         </div>

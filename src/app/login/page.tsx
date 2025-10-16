@@ -28,7 +28,7 @@ export default function LoginPage() {
         router.push('/dashboard')
       }
     } catch (err) {
-      setError('Ocorreu um erro inesperado. Tente novamente.')
+      setError('An unexpected error occurred. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -40,7 +40,7 @@ export default function LoginPage() {
       <div className="flex-1 bg-gray-50 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
           <h1 className="text-3xl font-bold text-black mb-8 text-center">
-            Signup
+            Login
           </h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -60,7 +60,7 @@ export default function LoginPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="seu@email.com"
+                placeholder="your@email.com"
                 className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
                 required
               />
@@ -91,7 +91,7 @@ export default function LoginPage() {
               {loading ? (
                 <div className="flex items-center">
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                  Entrando...
+                  Signing in...
                 </div>
               ) : (
                 <>
@@ -110,15 +110,15 @@ export default function LoginPage() {
               href="/forgot-password"
               className="block text-sm text-gray-600 hover:text-black transition-colors"
             >
-              Esqueceu sua senha?
+              Forgot your password?
             </Link>
             <p className="text-sm text-gray-600">
-              Não tem uma conta?{' '}
+              Don't have an account?{' '}
               <Link 
                 href="/signup"
                 className="text-black hover:underline font-medium transition-colors"
               >
-                Criar conta
+                Create account
               </Link>
             </p>
           </div>

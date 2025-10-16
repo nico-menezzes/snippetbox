@@ -20,14 +20,14 @@ export default function SignupPage() {
     e.preventDefault()
     setError('')
 
-    // Validações básicas
+    // Basic validations
     if (password !== confirmPassword) {
-      setError('As senhas não coincidem')
+      setError('Passwords do not match')
       return
     }
 
     if (password.length < 6) {
-      setError('A senha deve ter pelo menos 6 caracteres')
+      setError('Password must be at least 6 characters')
       return
     }
 
@@ -42,7 +42,7 @@ export default function SignupPage() {
         router.push('/dashboard')
       }
     } catch (err) {
-      setError('Ocorreu um erro inesperado. Tente novamente.')
+      setError('An unexpected error occurred. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -67,14 +67,14 @@ export default function SignupPage() {
             {/* Name Field */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
-                Nome completo
+                Full name
               </label>
               <input
                 id="name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Seu nome completo"
+                placeholder="Your full name"
                 className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
                 required
               />
@@ -90,7 +90,7 @@ export default function SignupPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="seu@email.com"
+                placeholder="your@email.com"
                 className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
                 required
               />
@@ -99,7 +99,7 @@ export default function SignupPage() {
             {/* Password Field */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-black mb-2">
-                Senha
+                Password
               </label>
               <input
                 id="password"
@@ -115,7 +115,7 @@ export default function SignupPage() {
             {/* Confirm Password Field */}
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-black mb-2">
-                Confirmar senha
+                Confirm password
               </label>
               <input
                 id="confirmPassword"
@@ -137,11 +137,11 @@ export default function SignupPage() {
               {loading ? (
                 <div className="flex items-center">
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                  Criando conta...
+                  Creating account...
                 </div>
               ) : (
                 <>
-                  Criar conta
+                  Create account
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -153,12 +153,12 @@ export default function SignupPage() {
           {/* Links */}
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
-              Já tem uma conta?{' '}
+              Already have an account?{' '}
               <Link 
                 href="/login"
                 className="text-black hover:underline font-medium transition-colors"
               >
-                Fazer login
+                Sign in
               </Link>
             </p>
           </div>
