@@ -71,7 +71,3 @@ export function Button({
   )
 }
 
-// Função utilitária para combinar classes (se não existir)
-function cn(...classes: (string | undefined)[]) {
-  return classes.filter(Boolean).join(' ')
-}

@@ -10,7 +10,7 @@
   }
 
   * {
-    @apply border-border;
+    @apply border-snippet-border;
   }
 
   body {
@@ -39,7 +39,7 @@
 @layer components {
   /* Button components */
   .btn-primary {
-    @apply bg-brand-600 hover:bg-brand-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2;
+    @apply bg-snippet-accent hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-snippet-accent focus:ring-offset-2;
   }
 
   .btn-secondary {
@@ -61,7 +61,7 @@
 
   /* Input components */
   .input {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-colors duration-200;
+    @apply w-full px-3 py-2 border border-snippet-border rounded-lg focus:outline-none focus:ring-2 focus:ring-snippet-accent focus:border-transparent transition-colors duration-200;
   }
 
   .input-error {
