@@ -8,55 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Cores baseadas no design do Figma do SnippetBox
-        brand: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-        },
-        gray: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-        },
-        // Cores específicas para o SnippetBox baseadas no Figma
+        // Cores essenciais baseadas no Figma
         snippet: {
           bg: '#ffffff',
-          surface: '#fafafa',
-          border: '#e5e5e5',
+          surface: '#f9fafb',
+          border: '#d1d5db',
           text: '#000000',
-          textSecondary: '#666666',
-          accent: '#007bff',
-          success: '#28a745',
-          warning: '#ffc107',
-          error: '#dc3545',
-        },
-        // Cores para syntax highlighting
-        code: {
-          bg: '#1e293b',
-          text: '#e2e8f0',
-          comment: '#64748b',
-          keyword: '#f472b6',
-          string: '#34d399',
-          number: '#fbbf24',
-          function: '#60a5fa',
-          variable: '#a78bfa',
-          operator: '#f59e0b',
-          punctuation: '#94a3b8',
+          textSecondary: '#6b7280',
         }
       },
       fontFamily: {

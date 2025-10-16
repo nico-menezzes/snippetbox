@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { useAuth } from '@/contexts/AuthContext'
-import { Button } from '@/components/ui/Button'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 
 export default function DashboardPage() {
@@ -27,12 +26,12 @@ export default function DashboardPage() {
                   Bem-vindo, {user?.email}!
                 </p>
               </div>
-              <Button
-                variant="outline"
+              <button
                 onClick={handleSignOut}
+                className="bg-black text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
               >
                 Sair
-              </Button>
+              </button>
             </div>
           </header>
 
