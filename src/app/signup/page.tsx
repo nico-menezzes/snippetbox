@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/contexts/AuthContext'
+import { SnippetBoxLogo } from '@/components/ui/SnippetBoxLogo'
 
 export default function SignupPage() {
   const [name, setName] = useState('')
@@ -49,15 +50,15 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen flex">
+    <div className="h-[100dvh] max-h-[100dvh] bg-neutral-100 flex">
       {/* Seção Esquerda - Formulário */}
-      <div className="flex-1 bg-gray-50 flex items-center justify-center p-8">
-        <div className="w-full max-w-md">
-          <h1 className="text-3xl font-bold text-black mb-8 text-center">
+      <div className="flex-1 flex items-center justify-center p-8">
+        <div className="w-full max-w-md flex flex-col items-center">
+          <h1 className="text-[32px] font-semibold text-snippet-text mb-6 text-center">
             Signup
           </h1>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 w-full">
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
                 {error}
@@ -65,8 +66,8 @@ export default function SignupPage() {
             )}
 
             {/* Name Field */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
+            <div className="space-y-2">
+              <label htmlFor="name" className="block text-[16px] font-normal text-snippet-text">
                 Full name
               </label>
               <input
@@ -75,14 +76,14 @@ export default function SignupPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your full name"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
+                className="w-full h-[48px] bg-white border border-[#cecece] border-[0.5px] rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-snippet-primary focus:border-transparent transition-colors"
                 required
               />
             </div>
 
             {/* Email Field */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
+            <div className="space-y-2">
+              <label htmlFor="email" className="block text-[16px] font-normal text-snippet-text">
                 Email
               </label>
               <input
@@ -91,14 +92,14 @@ export default function SignupPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
+                className="w-full h-[48px] bg-white border border-[#cecece] border-[0.5px] rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-snippet-primary focus:border-transparent transition-colors"
                 required
               />
             </div>
 
             {/* Password Field */}
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-black mb-2">
+            <div className="space-y-2">
+              <label htmlFor="password" className="block text-[16px] font-normal text-snippet-text">
                 Password
               </label>
               <input
@@ -107,14 +108,14 @@ export default function SignupPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
+                className="w-full h-[48px] bg-white border border-[#cecece] border-[0.5px] rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-snippet-primary focus:border-transparent transition-colors"
                 required
               />
             </div>
 
             {/* Confirm Password Field */}
-            <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-black mb-2">
+            <div className="space-y-2">
+              <label htmlFor="confirmPassword" className="block text-[16px] font-normal text-snippet-text">
                 Confirm password
               </label>
               <input
@@ -123,7 +124,7 @@ export default function SignupPage() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
+                className="w-full h-[48px] bg-white border border-[#cecece] border-[0.5px] rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-snippet-primary focus:border-transparent transition-colors"
                 required
               />
             </div>
@@ -132,7 +133,7 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={!name || !email || !password || !confirmPassword || loading}
-              className="w-full bg-black text-white font-medium py-3 px-4 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+              className="w-full h-[56px] bg-[#1b1a18] border border-[#3b3a37] border-[0.5px] rounded-lg text-white text-[18px] font-normal hover:bg-[#3b3a37] focus:outline-none focus:ring-2 focus:ring-snippet-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
             >
               {loading ? (
                 <div className="flex items-center">
@@ -142,7 +143,7 @@ export default function SignupPage() {
               ) : (
                 <>
                   Create account
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-2 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </>
@@ -152,11 +153,11 @@ export default function SignupPage() {
 
           {/* Links */}
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-snippet-textSecondary">
               Already have an account?{' '}
               <Link 
                 href="/login"
-                className="text-black hover:underline font-medium transition-colors"
+                className="text-snippet-text hover:underline font-medium transition-colors"
               >
                 Sign in
               </Link>
@@ -166,26 +167,20 @@ export default function SignupPage() {
       </div>
 
       {/* Seção Direita - Boas-vindas */}
-      <div className="flex-1 bg-black flex items-center justify-center p-8">
-        <div className="text-center">
-          {/* Ícone da caixa */}
+      <div className="hidden lg:flex flex-1 bg-[#1b1a18] items-center justify-center relative">
+        <div className="text-center flex flex-col items-center">
+          {/* Logo do SnippetBox */}
           <div className="mb-8">
-            <svg 
-              className="w-24 h-24 mx-auto text-white drop-shadow-lg" 
-              fill="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5zM12 4.5L20.5 9v8c0 3.86-2.69 6.93-6.5 7.93V14.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v11.43C6.19 23.93 3.5 20.86 3.5 17V9L12 4.5z"/>
-            </svg>
+            <SnippetBoxLogo size="lg" />
           </div>
           
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Welcome to
-          </h2>
-          <h2 className="text-4xl font-bold text-white">
-            Snippet Box
+          <h2 className="text-[32px] font-semibold text-white max-w-[12rem]">
+            Welcome to Snippet Box
           </h2>
         </div>
+        
+        {/* Efeito de blur na parte inferior */}
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[120%] h-40 blur-[50px] bg-gradient-to-t from-white via-transparent to-[rgba(249,248,247,0)]" />
       </div>
     </div>
   )

@@ -8,13 +8,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Cores essenciais baseadas no Figma
+        // Cores exatas do Figma
         snippet: {
-          bg: '#ffffff',
-          surface: '#f9fafb',
-          border: '#d1d5db',
-          text: '#000000',
-          textSecondary: '#6b7280',
+          primary: '#1b1a18',      // Preto principal
+          secondary: '#3b3a37',    // Preto secundário para bordas
+          background: '#f5f5f5',   // Background neutro (neutral-100)
+          surface: '#ffffff',       // Fundo branco
+          border: '#cecece',        // Bordas cinza claro
+          text: '#1b1a18',         // Texto preto
+          textSecondary: '#6b7280', // Texto secundário
+          accent: '#1b1a18',       // Cor de destaque
+        },
+        // Adicionando neutral-100 para compatibilidade com Figma
+        neutral: {
+          100: '#f5f5f5'
         }
       },
       fontFamily: {
